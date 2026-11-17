@@ -55,15 +55,12 @@ favorites_app/
 │
 ├── lib/
 │   ├── main.dart
-│   │
 │   ├── models/
 │   │   ├── post.dart
 │   │   └── post.g.dart
-│   │
 │   ├── services/
 │   │   ├── post_service.dart
 │   │   └── favorites_service.dart
-│   │
 │   └── screens/
 │       ├── posts_screen.dart
 │       └── favorites_screen.dart
@@ -83,38 +80,30 @@ favorites_app/
 
 ### Prerequisites
 
-Make sure you have installed:
-
 - Flutter SDK
 - Dart SDK
 - Visual Studio Code
 - Chrome (if running the web version)
 
-### 1. Clone or Download the Project
-
-Clone the GitHub repository:
+### 1. Clone the Repository
 
 ```bash
-git clone flutter-favorites-app
+git clone https://github.com/mariam643/flutter-favorites-app.git
 ```
 
 Navigate to the project directory:
 
 ```bash
-cd favorites_app
+cd flutter-favorites-app
 ```
 
 ### 2. Install Dependencies
-
-Install the project dependencies:
 
 ```bash
 flutter pub get
 ```
 
 ### 3. Install Hive Code Generation Dependencies
-
-Install `build_runner` and `hive_generator` as development dependencies:
 
 ```bash
 flutter pub add --dev build_runner hive_generator
@@ -124,15 +113,13 @@ These packages are required to generate the Hive Type Adapter.
 
 ### 4. Generate the Hive Adapter
 
-Run the following command to generate the `post.g.dart` file:
-
 ```bash
 dart run build_runner build --delete-conflicting-outputs
 ```
 
-This command generates the Hive adapter based on the annotations in `post.dart`.
+This generates the `post.g.dart` file based on the annotations in `post.dart`.
 
-**Note:** The `post.g.dart` file is generated automatically and should not be edited manually.
+**Note:** The generated `post.g.dart` file should be included in the repository and should not be edited manually.
 
 ### 5. Run the Application
 
@@ -201,25 +188,17 @@ Application screenshots are available in the `screenshots/` directory.
 
 ### 1. Posts Screen
 
-Displays the available posts with filled and outlined favorite icons.
-
 ![Posts Screen](screenshots/posts_screen.png)
 
 ### 2. Favorites Screen
-
-Displays all posts saved by the user.
 
 ![Favorites Screen](screenshots/favorites_screen.png)
 
 ### 3. Offline Support
 
-Demonstrates that previously saved favorites remain accessible without an internet connection.
-
 ![Offline Test](screenshots/offline_test.png)
 
 ### 4. Empty Favorites Screen
-
-Displays the friendly "No favorites yet" message when no posts are saved.
 
 ![Empty Favorites](screenshots/empty_favourites.png)
 
@@ -236,17 +215,46 @@ The project demonstrates:
 - Offline access to locally saved data.
 - Data persistence across application restarts.
 
-## 📤 GitHub Submission
+## 📤 GitHub Repository
 
-To upload the project and its documentation to GitHub, run:
+The project is available on GitHub:
+
+**Repository:** https://github.com/mariam643/flutter-favorites-app
+
+### Uploading the Project to GitHub (First Time)
+
+After creating the GitHub repository, open the project folder in VS Code and run:
 
 ```bash
+git init
 git add .
-git commit -m "Add Flutter favorites app"
+git commit -m "Initial commit - Flutter Favorites App"
+git branch -M main
+git remote add origin https://github.com/mariam643/flutter-favorites-app.git
 git push -u origin main
 ```
 
-Make sure the repository includes the source code, generated `post.g.dart` file, README, and screenshots.
+### If the Remote Repository Is Already Connected
+
+If Git reports that `origin` already exists, update the existing remote URL instead of adding another one:
+
+```bash
+git remote set-url origin https://github.com/mariam643/flutter-favorites-app.git
+```
+
+Verify the remote:
+
+```bash
+git remote -v
+```
+
+Then push your changes:
+
+```bash
+git push -u origin main
+```
+
+**Note:** The `git init` and `git remote add origin` commands are only needed when setting up the repository for the first time.
 
 ---
 
